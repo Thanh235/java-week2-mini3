@@ -7,14 +7,21 @@ public class TinyCompiler {
         keyin.next(); // int
         keyin.next(); // result
         keyin.next(); // =
-        int first = keyin.nextInt(); // 第一個整數
+
+        int first = keyin.nextInt();
         keyin.next(); // +
-        int second = keyin.nextInt(); // 第二個整數
+        int second = keyin.nextInt();
+        keyin.next(); // +
+        int third = keyin.nextInt();
         keyin.next(); // ;
 
         System.out.println("MOVI R1, " + first);
         System.out.println("MOVI R2, " + second);
         System.out.println("ADD R0, R1, R2");
+        System.out.println("MOVI R2, " + third);
+        System.out.println("ADD R0, R0, R2");
         System.out.println("STORE [0], R0");
+
+        keyin.close();
     }
 }
